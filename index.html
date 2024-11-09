@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Go on a Date with Me?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff7eb9, #feb2d9); /* Beautiful pink gradient */
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Prevent scrollbars from showing */
+            position: relative;
+        }
+
+        /* Floating hearts in the background */
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            color: #ff4d4d;
+            animation: float 5s ease-in-out infinite;
+            opacity: 0.8;
+        }
+
+        /* Keyframes to animate the hearts floating */
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(-20px) scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 0.8;
+            }
+        }
+
+        .container {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 40px 60px;
+            max-width: 500px;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+        }
+
+        h1 {
+            color: #ff6347;
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .question {
+            font-size: 1.5em;
+            color: #555;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 1.4em;
+            margin: 10px;
+            border-radius: 50px;
+            cursor: pointer;
+            border: none;
+            width: 200px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        /* Yes button styling */
+        .yes-button {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .yes-button:hover {
+            background-color: #218838;
+            transform: scale(1.1);
+        }
+
+        /* No button styling */
+        .no-button {
+            background-color: #dc3545;
+            color: white;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .no-button:hover {
+            background-color: #c82333;
+        }
+
+        .no-button:active {
+            background-color: #c82333;
+        }
+
+        /* Thank You message styling */
+        .thank-you {
+            display: none;
+            font-size: 1.3em;
+            color: #4CAF50;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        /* Add a cool sparkle effect */
+        .sparkles {
+            font-size: 2em;
+            color: #ff6347;
+            animation: sparkle 2s infinite;
+        }
+
+        @keyframes sparkle {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Heart Emoji Elements in the background -->
+    <div class="heart" style="top: 10%; left: 20%;">🐢</div>
+    <div class="heart" style="top: 30%; left: 60%;">💖</div>
+    <div class="heart" style="top: 50%; left: 10%;">💘</div>
+    <div class="heart" style="top: 70%; left: 80%;">💝</div>
+    <div class="heart" style="top: 20%; left: 75%;">❤️</div>
+    <div class="heart" style="top: 60%; left: 35%;">💖</div>
+
+    <div class="container">
+        <h1>Will You Go on a Date with Me?</h1>
+        <p class="question">Please choose one of the options below:</p>
+
+        <button class="button yes-button" onclick="acceptDate()">Yes, I would love to!</button>
+        <button class="button no-button" onclick="declineDate()" disabled>No, I'm not interested</button>
+
+        <p class="thank-you" id="thank-you-message">
+            Thank you for saying yes! I can't wait to spend time with you. 💖
+            <span class="sparkles">✨</span>
+        </p>
+    </div>
+
+    <script>
+        function acceptDate() {
+            // Show thank you message and hide buttons
+            document.getElementById("thank-you-message").style.display = "block";
+            document.querySelector('.yes-button').style.display = 'none';
+            document.querySelector('.no-button').style.display = 'none';
+        }
+
+        function declineDate() {
+            // "No" button does nothing as it's disabled
+            alert("I appreciate your honesty, but you can't decline! 😜");
+        }
+    </script>
+
+</body>
+</html>
+
